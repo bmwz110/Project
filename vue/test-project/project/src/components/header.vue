@@ -15,7 +15,7 @@
       <el-menu-item index="2">我的作业</el-menu-item>
       <el-menu-item index="3">排行榜</el-menu-item>
     </el-menu>
-    <h2>昨日总结</h2>
+    <h2>今日回译</h2>
   </div>
 </template>
 
