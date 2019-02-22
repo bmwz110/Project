@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
         <input placeholder="Where?" />
       </div>
       <div className="SearchBar-submit">
-        <a>Let's Go</a>
+        <a href="www.#.com">Let's Go</a>
       </div>
     </div>
     )
