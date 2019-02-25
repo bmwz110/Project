@@ -5,17 +5,29 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: [
-        "learn react",
-        "learn english",
-        "learn vue"
-      ]
+      list: [],
+      inputValue: ""
     }
   }
 
   handleBtnClick() {
     this.setState({
-      list: [...this.state.list, "hello world"]
+      list: [...this.state.list, this.state.inputValue],
+      inputValue: ""
+    })
+  }
+
+  handleInputChange(e) {
+    this.setState({
+      inputValue: e.target.value
+    })
+  }
+
+  handleItemClick(index) {
+    const list = [...this.state.list];
+    list.splice(index, 1);
+    this.setState({
+      list: list
     })
   }
 
@@ -23,17 +35,13 @@ class TodoList extends React.Component {
     return (
       <div>
         <div>
-          <input />
-          {/*若无bind(this),
-          由于handleBtnClick本身处于button中，所以该方法内的this将指向button，
-          加上bind(this)后，
-          方法内的this将与this.handleBtnClick的this指向同一处，既整个TodoList组件 */}
+          <input value={this.state.inputValue} onChange={this.handleInputChange.bind(this)}/>
           <button onClick={this.handleBtnClick.bind(this)}>Add</button>
         </div>
         <ul>
           {
-            this.state.list.map((item) => {
-              return <li>{item}</li>
+            this.state.list.map((item,index) => {
+              return <li key={index} onClick={this.handleItemClick.bind(this, index)}>{item}</li>
             })
           }
         </ul>
