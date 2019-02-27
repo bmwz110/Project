@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>todoist</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="inputValue"/>
+      <button v-on:click="handleBtnClick">Add</button>
+      <ul>
+        <li v-for="item in list">{{item}}</li>
+      </ul>
+    </div>
+    
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          list: [],
+          inputValue: ''
+        },
+        methods: {
+          handleBtnClick: function() {
+            this.list.push(this.inputValue);
+            this.inputValue = '';
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
