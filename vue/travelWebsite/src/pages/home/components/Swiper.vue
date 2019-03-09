@@ -1,11 +1,8 @@
 <template>
   <div class="wrapper">
     <swiper :options="swiperOption">
-      <swiper-slide>
-        <img class="swiper-img" src="http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20192/e1abd1a9cfc4330d4d8794285350b4dd.jpg_750x200_a18c9dff.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img class="swiper-img" src="http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20192/9f73976e40c4ef845cabe0efc0269ebb.jpg_750x200_aab92b7a.jpg" />
+      <swiper-slide v-for="item of swiperList" :key="item.id">
+        <img class="swiper-img" :src="item.imgUrl"/>
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
@@ -18,8 +15,16 @@ export default {
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination'
-      }
+        pagination: '.swiper-pagination',
+        loop: true
+      },
+      swiperList: [{
+        id: '0001',
+        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20192/e1abd1a9cfc4330d4d8794285350b4dd.jpg_750x200_a18c9dff.jpg'
+      }, {
+        id: '0002',
+        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20192/9f73976e40c4ef845cabe0efc0269ebb.jpg_750x200_aab92b7a.jpg'
+      }]
     }
   }
 }
