@@ -21,7 +21,7 @@ export default {
 </script>
 
 <!-- stylus引用失败，原因https://blog.csdn.net/weixin_37219302/article/details/79740464 -->
-<!-- scoped关键字表明样式只对该组件有效，不会影响其他 -->
+<!-- scoped关键字表明样式只对当前组件有效，不会影响其他 -->
 <style lang="stylus" scoped>
   /* 样式里引用样式必须加@符号 */
   /* 通过在webpack.base.conf.js中对resolve下进行设置，可以使用~styles别名访问路径 */
