@@ -1,10 +1,10 @@
 <template>
   <div class="icons">
     <swiper>
-      <swiper-slide>
+      <swiper-slide v-for="(page, index) of pages" :key="index">
         <div
           class="icon"
-          v-for="item of iconList"
+          v-for="item of page"
           :key="item.id">
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl" />
@@ -70,7 +70,7 @@ export default {
         }
         pages[page].push(item)
       })
-      return pages;
+      return pages
     }
   }
 }
@@ -78,6 +78,7 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~styles/variables.styl';
+  @import '~styles/mixins.styl';
   .icons >>> .swiper-container
     height: 0
     padding-bottom: 50%
@@ -109,4 +110,5 @@ export default {
       line-height: .44rem
       text-align: center
       color: $darkTextColor
+      ellipsis()
 </style>
