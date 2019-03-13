@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/home/Home.vue'
-import City from '@/pages/city/City.vue'
-import Detail from '@/pages/detail/Detail'
 
 Vue.use(Router)
 
@@ -10,15 +7,16 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'Home',
-    component: Home
+    // 异步加载页面
+    component: () => import('@/pages/home/Home.vue')
   }, {
     path: '/city',
     name: 'City',
-    component: City
+    component: () => import('@/pages/city/City.vue')
   }, {
     path: '/detail/:id',
     name: 'Detail',
-    component: Detail
+    component: () => import('@/pages/detail/Detail')
   }],
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
