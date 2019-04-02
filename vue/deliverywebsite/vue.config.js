@@ -1,3 +1,8 @@
+const appData = require('./data.json')
+cosnt seller = appData.seller
+cosnt goods = appData.goods
+cosnt rating= appData.rating
+
 module.exports = {
   css: {
     loaderOptions: {
@@ -15,4 +20,7 @@ module.exports = {
       theme: true
     }
   }
+}
+devServer: {
+
 }
