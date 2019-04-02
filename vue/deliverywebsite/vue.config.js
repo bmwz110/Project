@@ -1,7 +1,7 @@
 const appData = require('./data.json')
-cosnt seller = appData.seller
-cosnt goods = appData.goods
-cosnt rating= appData.rating
+const seller = appData.seller
+const goods = appData.goods
+const rating = appData.rating
 
 module.exports = {
   css: {
@@ -19,8 +19,27 @@ module.exports = {
       postCompile: true,
       theme: true
     }
+  },
+  devServer: {
+    before (app) {
+      app.get('/api/seller', function (req, res) {
+        res.json({
+          errno: 0,
+          data: seller
+        })
+      })
+      app.get('/api/goods', function (req, res) {
+        res.json({
+          errno: 0,
+          data: goods
+        })
+      })
+      app.get('/api/rating', function (req, res) {
+        res.json({
+          errno: 0,
+          data: rating
+        })
+      })
+    }
   }
-}
-devServer: {
-
 }
