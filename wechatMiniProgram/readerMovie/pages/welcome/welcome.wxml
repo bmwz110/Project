@@ -1,3 +1,7 @@
 <view>
-  <text>hello</text>
+  <image src=""></image>
+  <text></text>
+  <view>
+    <text></text>
+  </view>
 </view>
