@@ -1,7 +1,44 @@
 <view>
-  <swiper>
-    <swiper-item>Con</swiper-item>
-    <swiper-item>Con</swiper-item>
-    <swiper-item>Con</swiper-item>
+  <swiper indicator-dots="true" autoplay="true">
+    <swiper-item>
+      <image src="/images/wx.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/vr.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/iqiyi.png"></image>
+    </swiper-item>
   </swiper>
+
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="/images/avatar/1.png"></image>
+      <text class="post-date">Sep 18 2016</text>
+    </view>
+    <text class="post-title">正是虾肥蟹壮时</text>
+    <image class="post-image" src="/images/post/crab.png"></image>
+    <text class="post-content">菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥菊黄蟹正肥</text>
+    <view class="post-like">
+      <image class="post-like-image" src="/images/icon/chat.png"></image>
+      <text class="post-like-font">96</text>
+      <image class="post-like-image" src="/images/icon/view.png"></image>
+      <text class="post-like-font">112</text>
+    </view>
+  </view>
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="/images/avatar/1.png"></image>
+      <text class="post-date">Sep 25 2016</text>
+    </view>
+    <text class="post-title">比利林恩的中场战事</text>
+    <image class="post-image" src="/images/post/crab.png"></image>
+    <text class="post-content">比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩比利林恩</text>
+    <view class="post-like">
+      <image class="post-like-image" src="/images/icon/chat.png"></image>
+      <text class="post-like-font">96</text>
+      <image class="post-like-image" src="/images/icon/view.png"></image>
+      <text class="post-like-font">112</text>
+    </view>
+  </view>
 </view>
