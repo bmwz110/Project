@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wx4fd01375ef9332c9",
-	"projectname": "sample",
+	"projectname": "readerMovie",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
