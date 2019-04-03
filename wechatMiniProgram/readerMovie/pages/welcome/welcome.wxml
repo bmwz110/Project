@@ -1,7 +1,7 @@
-<view>
-  <image src=""></image>
-  <text></text>
-  <view>
-    <text></text>
+<view class="container">
+  <image class="user-img1" src="/images/img1.png"></image>
+  <text class="user-name">Hello, bmwz110</text>
+  <view class="moto-container">
+    <text class="moto">开启小程序之旅</text>
   </view>
 </view>
