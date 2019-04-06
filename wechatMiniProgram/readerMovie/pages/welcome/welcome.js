@@ -1,7 +1,7 @@
 Page({
   onTap: function(event) {
     wx.navigateTo({
-      url: "../posts/post"
-    });
+      url: '../posts/posts',
+    })
   }
 })
