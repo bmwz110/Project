@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <Header />
+    <Home />
+    <Project />
   </div>
 </template>
 
 <script>
-import Header from './components/header/Header'
+import Home from './components/home/Home'
+import Project from './components/project/Project'
 
 export default {
   name: 'app',
   components: {
-    Header
+    Home,
+    Project
   }
 }
 </script>
