@@ -4,9 +4,10 @@ import router from './router'
 // fastclick需要npm install fastclick --save安装，解决部分设备点击延迟300ms问题
 import fastClick from 'fastclick'
 // reset.css解决不同设备默认样式不统一的问题
-import './assets/styles/reset.css'
+import 'styles/reset.css'
 // border.css解决多倍屏1像素边框问题
-import './assets/styles/border.css'
+import 'styles/border.css'
+import 'styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
