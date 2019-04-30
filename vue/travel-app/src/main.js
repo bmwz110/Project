@@ -10,6 +10,7 @@ import 'styles/reset.css'
 // border.css解决多倍屏1像素边框问题
 import 'styles/border.css'
 import 'styles/iconfont.css'
+import 'styles/iconfont.js'
 import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
