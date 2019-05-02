@@ -47,31 +47,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        title: '西溪国家湿地公园',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1904/a2/a23ae48aac0c0ab2a3.water.jpg_200x200_38cef490.jpg',
-        commentNum: '20条评论',
-        price: '70',
-        position: '杭州'
-      }, {
-        id: '0002',
-        title: '西溪国家湿地公园',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1904/a2/a23ae48aac0c0ab2a3.water.jpg_200x200_38cef490.jpg',
-        commentNum: '20条评论',
-        price: '70',
-        position: '杭州'
-      }, {
-        id: '0003',
-        title: '西溪国家湿地公园',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1904/a2/a23ae48aac0c0ab2a3.water.jpg_200x200_38cef490.jpg',
-        commentNum: '20条评论',
-        price: '70',
-        position: '杭州'
-      }]
-    }
+  props: {
+    recommendList: Array
   }
 }
 
@@ -105,15 +82,16 @@ export default {
       .item-comment
         margin-top: .05rem
         .icon
+          float: left
           font-size: .3rem
         .comment-numbers
-          float: right
-          margin-right: 2.8rem
+          float: left
+          margin-left: .1rem
           padding-top: .04rem
           font-size: .1rem
           color: #a3a3a3
       .price-content
-        margin-top: .4rem
+        margin-top: .8rem
         .icon
           float: left
           font-size: .3rem
