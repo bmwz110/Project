@@ -86,4 +86,5 @@ export default {
       height: .7rem
       line-height: .7rem
       color: #ccc
+      font-size: .1rem
 </style>
