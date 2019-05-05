@@ -4,24 +4,29 @@
     <title>Title</title>
     <meta charset="UTF-8">
     <style>
+      .layout {
+        background: grey;
+      }
       .d1 {
-        position: absolute;
-        height: 200px;
-        width: 200px;
-        background: red
+        width: 60px;
+        height: 60px;
+        float: left;
+        background: yellow;
       }
       .d2 {
-        background: green;
+        width: 100px;
+        margin-top: 30px;
         height: 200px;
-        width: 300px;
+        background: red;
+        overflow: hidden;
       }
     </style>
   </head>
   <body>
-    <div class="d1">
-    </div>
-    <div class="d2">
-
+    <div class="layout">
+      <div class="d1"></div>
+      <div class="d2"></div>
+      <div class="d3"></div>
     </div>
     <script>
 
