@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { clearTimeout, setTimeout } from 'timers'
 export default {
   name: 'CityAlphabet',
   props: {
@@ -32,7 +33,9 @@ export default {
   },
   data () {
     return {
-      touchStatus: false
+      touchStatus: false,
+      startY: 0,
+      timer: null
     }
   },
   methods: {
@@ -44,15 +47,21 @@ export default {
     },
     handleTouchMove (e) {
       if (this.touchStatus) {
-        // 通过offsetTop拿到元素距离父元素顶部的值
-        const startY = this.$refs['A'][0].offsetTop
-        // 事件e的touches的第0项即表示手指信息
-        // 计算当前位置距离页面顶部的高 - 79
-        const touchY = e.touches[0].clientY - 79
-        const index = Math.floor((touchY - startY) / 22)
-        if (index >= 0 && index < this.letters.length) {
-          this.$emit('change', this.letters[index])
+        // 滚动 - 函数节流
+        if (this.timer) {
+          clearTimeout(this.timer)
         }
+        this.timer = setTimeout(() => {
+          // 通过offsetTop拿到元素距离父元素顶部的值
+          const startY = this.$refs['A'][0].offsetTop
+          // 事件e的touches的第0项即表示手指信息
+          // 计算当前位置距离页面顶部的高 - 79
+          const touchY = e.touches[0].clientY - 79
+          const index = Math.floor((touchY - startY) / 22)
+          if (index >= 0 && index < this.letters.length) {
+            this.$emit('change', this.letters[index])
+          }
+        }, 20)
       }
     },
     handleTouchEnd () {
