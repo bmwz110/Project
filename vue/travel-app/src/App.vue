@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <!-- router-view显示当前路由地址所对应的内容 -->
-    <router-view/>
+    <!-- 每当路由发生切换时，Ajax都会被重新发送，造成性能降低 -->
+    <!-- 使用keep-alive持久连接，仅HTTP1.1及以上支持 -->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
