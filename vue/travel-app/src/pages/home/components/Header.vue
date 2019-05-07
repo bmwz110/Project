@@ -9,6 +9,8 @@
     </div>
     <router-link to='/city'>
       <div class="header-right">
+        <!-- 通过vuex来使用公用数据 -->
+        <!-- 不使用mapState时，应为{{this.$store.state.city}} -->
         {{this.city}}
         <span class="iconfont">&#xe605;</span>
       </div>
@@ -17,10 +19,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
+  computed: {
+    // mapState能够将 $store.state.city 映射到 this.city
+    ...mapState(['city'])
   }
 }
 
@@ -53,7 +57,8 @@ export default {
       border-radius: .1rem
       color: #ccc
     .header-right
-      width: 1.24rem
+      min-width: 1.04rem
+      padding: 0 .1rem
       float: right
       text-align: center
       color: #fff

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store/index'
 // fastclick需要npm install fastclick --save安装，解决部分设备点击延迟300ms问题
 import fastClick from 'fastclick'
 // 引入轮播插件
@@ -19,6 +20,7 @@ Vue.use(VueAwesomeSwiper)
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
 

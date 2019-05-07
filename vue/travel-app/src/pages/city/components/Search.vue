@@ -13,10 +13,12 @@
         <li
           class="search-item border-bottom"
           v-for="item of list"
-          :key="item.id">
+          :key="item.id"
+          @click="handleCityClick(item.name)"
+        >
           {{item.name}}
         </li>
-        <li v-show="!list.length" class="search-item border-bottom">没有找到匹配数据</li>
+        <li v-show="hasList" class="search-item border-bottom">没有找到匹配数据</li>
       </ul>
     </div>
   </div>
@@ -25,6 +27,7 @@
 <script>
 import Bscroll from 'better-scroll'
 import { clearTimeout, setTimeout } from 'timers'
+import { mapMutations } from 'vuex'
 export default {
   name: 'CitySearch',
   props: {
@@ -35,6 +38,12 @@ export default {
       keyword: '',
       list: [],
       timer: null
+    }
+  },
+  computed: {
+    // 逻辑运算尽量在JS中，而不是在模版中
+    hasList () {
+      return !this.list.length
     }
   },
   watch: {
@@ -59,6 +68,16 @@ export default {
         this.list = result
       }, 100)
     }
+  },
+  methods: {
+    handleCityClick (city) {
+      // 若不使用mapMutations，应为this.$store.commit('changeCity', city)
+      this.changeCity(city)
+      // router实现页面跳转
+      this.$router.push('/')
+    },
+    // 有一个mutation叫作changeCity，然后把mutation映射到组件中名为changeCity的方法里
+    ...mapMutations(['changeCity'])
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.search)
