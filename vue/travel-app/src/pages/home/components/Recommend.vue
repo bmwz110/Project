@@ -8,7 +8,13 @@
       猜你喜欢
     </div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <router-link
+        tag="li"
+        class="item border-bottom"
+        v-for="item of recommendList"
+        :key="item.id"
+        :to="'/detail/' + item.id"
+      >
         <img class="item-img" :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -39,7 +45,7 @@
           </div>
           <div class="position">{{item.position}}</div>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
