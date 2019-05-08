@@ -43,9 +43,16 @@ export default {
       }
     }
   },
+  // 使用keep-alive时会产生activated生命周期函数，在页面展示时生效
   activated () {
+    // window绑定是全局绑定，会对其他页面也产生绑定。需要解绑
     window.addEventListener('scroll', this.handleScroll)
+  },
+  // 页面被隐藏时，执行deactivated生命周期函数
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
+
 }
 
 </script>
