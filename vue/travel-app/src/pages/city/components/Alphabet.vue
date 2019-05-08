@@ -6,7 +6,7 @@
       :key="item"
       :ref="item"
       @click="handleLetterClick"
-      @touchstart="handleTouchStart"
+      @touchstart.prevent="handleTouchStart"
       @touchmove="handleTouchMove"
       @touchend="handleTouchEnd"
     >
@@ -61,7 +61,7 @@ export default {
           if (index >= 0 && index < this.letters.length) {
             this.$emit('change', this.letters[index])
           }
-        }, 20)
+        }, 10)
       }
     },
     handleTouchEnd () {
