@@ -3,7 +3,8 @@
     <!-- router-view显示当前路由地址所对应的内容 -->
     <!-- 每当路由发生切换时，Ajax都会被重新发送，造成性能降低 -->
     <!-- 使用keep-alive持久连接，仅HTTP1.1及以上支持 -->
-    <keep-alive>
+    <!-- exclude="组件名"，属性会使所选的组件不进行缓存 -->
+    <keep-alive exclude="Detail">
       <router-view/>
     </keep-alive>
   </div>

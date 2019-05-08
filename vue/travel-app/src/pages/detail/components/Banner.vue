@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1904/bc/bca6206e16e6b242a3.water.jpg_r_800x800_33273c38.jpg" />
+      <img class="banner-img" :src="bannerImg" />
       <div class="banner-info">
-        <div class="banner-title">西溪国家湿地洪园</div>
+        <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe632;</span>
-          59
+          {{this.bannerImgs.length}}
         </div>
       </div>
     </div>
     <common-gallary
-      :imgs="imgs"
+      :imgs="bannerImgs"
       v-show="showGallary"
       @close="handleGallaryClose"
       >
@@ -26,12 +26,14 @@ export default {
   components: {
     CommonGallary
   },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      imgs: ['http://img1.qunarzz.com/sight/p0/1904/3c/3c82bd77bd95a561a3.water.jpg_r_800x800_97fa9d2c.jpg',
-      'http://img1.qunarzz.com/sight/p0/1904/37/379f3477cded8069a3.water.jpg_350x240_3dbc1a8f.jpg',
-      'http://img1.qunarzz.com/sight/p0/1904/ea/ea9807b1e4f9f175a3.water.jpg_350x240_def3cdc9.jpg']
+      showGallary: false
     }
   },
   methods: {
