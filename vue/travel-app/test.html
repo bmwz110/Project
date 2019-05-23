@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <title>Title</title>
-    <meta charset="UTF-8">
-    <style>
-      .layout {
-        background: grey;
-      }
-      .d1 {
-        width: 60px;
-        height: 60px;
-        float: left;
-        background: yellow;
-      }
-      .d2 {
-        width: 100px;
-        margin-top: 30px;
-        height: 200px;
-        background: red;
-        overflow: hidden;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="layout">
-      <div class="d1"></div>
-      <div class="d2"></div>
-      <div class="d3"></div>
-    </div>
-    <script>
-
-    </script>
-  </body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+        .over-x{
+            width:600px;
+            overflow:scroll ;
+        }
+            ul{
+                border: 1px solid #1FC195;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                background-color: #CCCCCC;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                height: 610px;
+                width:19000px
+            }
+            ul li{
+                padding: 0;
+                margin: 0;
+                float: left;
+                width: 300px;
+                height: 600px;
+                background: #8FBC8F;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="over-x">
+            <ul>
+                <li>test1</li>
+                <li>test2</li>
+                <li>test3</li><li>test3</li><li>test3</li><li>test3</li><li>test3</li>
+            </ul>
+        </div>
+    </body>
 </html>
