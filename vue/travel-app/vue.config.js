@@ -16,6 +16,7 @@ module.exports = {
       }
     }
   },
+
   chainWebpack (config) {
     config.resolve.alias
       // .set('components', resolve('src/components'))
@@ -23,5 +24,23 @@ module.exports = {
       // .set('api', resolve('src/api'))
       .set('styles', resolve('src/assets/styles'))
       .set('common', resolve('src/common'))
+  },
+
+  css: {
+    loaderOptions: {
+      stylus: {
+        'resolve url': true,
+        'import': [
+          './src/theme'
+        ]
+      }
+    }
+  },
+
+  pluginOptions: {
+    'cube-ui': {
+      postCompile: true,
+      theme: true
+    }
   }
 }
