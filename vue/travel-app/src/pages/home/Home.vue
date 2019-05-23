@@ -3,6 +3,7 @@
     <home-header></home-header>
     <home-swiper :swiperList="swiperList"></home-swiper>
     <home-icons :iconList="iconList"></home-icons>
+    <home-popular :polularList="popularList"></home-popular>
     <home-recommend :recommendList="recommendList"></home-recommend>
     <home-weekend :weekendList="weekendList"></home-weekend>
     <home-footer></home-footer>
@@ -13,6 +14,7 @@
 import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
+import HomePopular from './components/Popular'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import HomeFooter from './components/Footer'
@@ -25,6 +27,7 @@ export default {
     HomeHeader,
     HomeSwiper,
     HomeIcons,
+    HomePopular,
     HomeRecommend,
     HomeWeekend,
     HomeFooter
@@ -34,6 +37,7 @@ export default {
       lastCity: '',
       swiperList: [],
       iconList: [],
+      popularList: [],
       recommendList: [],
       weekendList: []
     }
@@ -52,6 +56,7 @@ export default {
         const data = res.data
         this.swiperList = data.swiperList
         this.iconList = data.iconList
+        this.popularList = data.popularList
         this.recommendList = data.recommendList
         this.weekendList = data.weekendList
       }

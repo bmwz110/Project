@@ -4,15 +4,18 @@
     "city": "杭州",
     "swiperList": [{
         "id": "0001",
-        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1609/4d/3dc09bcc290f0c02.jpg_750x200_09c97d67.jpg"
+        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20195/60904fc24f223e0db5aee3c6148e641f.jpg_750x200_b1b90a19.jpg"
       },{
         "id": "0002",
-        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/b5/4b2278b83092cb02.jpg_750x200_9a01c2af.jpg"
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1609/4d/3dc09bcc290f0c02.jpg_750x200_09c97d67.jpg"
       },{
         "id": "0003",
-        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/e9f92741ef8b1cb0472ced96150d0d1c.jpg_750x200_1f0a2392.jpg"
+        "imgUrl": "http://img1.qunarzz.com/piao/fusion/1711/b5/4b2278b83092cb02.jpg_750x200_9a01c2af.jpg"
       },{
         "id": "0004",
+        "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/e9f92741ef8b1cb0472ced96150d0d1c.jpg_750x200_1f0a2392.jpg"
+      },{
+        "id": "0005",
         "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/3be3b4809a84409d544e3ef078e075ef.jpg_750x200_7d85db79.jpg"
       }],
     "iconList": [{
@@ -91,6 +94,37 @@
         "commentNum": "9608条评论",
         "price": "24",
         "position": "淳安县"
+      }],
+    "popularList": [{
+        "id": "0001",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1812/5a/5a4129c70246ac2da3.img.jpg_250x250_1a7f0b42.jpg",
+        "title": "灵隐寺",
+        "price": "45"
+      }, {
+        "id": "0002",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1903/e0/e0e0c6ca274ad49aa3.img.jpg_250x250_6e869a73.jpg",
+        "title": "西溪国家湿地公园",
+        "price": "460"
+      }, {
+        "id": "0003",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1901/8c/8c1d317bc954ce06a3.water.jpg_250x250_62d06f75.jpg",
+        "title": "宋城千古情",
+        "price": "360"
+      }, {
+        "id": "0004",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1411/b6/662fc49d1d26a5a7775cf6b7f8b4ecec.water.jpg_250x250_9d8a0a33.jpg",
+        "title": "杭州野生动物世界",
+        "price": "210"
+      }, {
+        "id": "0005",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/201405/27/8211cadd5d9fefeaa044c5b7eefc695d.jpg_250x250_b5105e04.jpg",
+        "title": "千岛湖",
+        "price": "40"
+      }, {
+        "id": "0006",
+        "imgUrl": "http://img1.qunarzz.com/sight/p0/1709/28/288fbeccc335f774a3.img.jpg_250x250_692431c6.jpg",
+        "title": "印象西湖",
+        "price": "340"
       }],
     "weekendList": [{
         "id": "0001",
