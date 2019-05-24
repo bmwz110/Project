@@ -14,8 +14,11 @@ import 'styles/border.css'
 import 'styles/iconfont.css'
 import 'styles/iconfont.js'
 import 'swiper/dist/css/swiper.css'
-// 解决部分androi机型city页面白屏问题
+// 解决部分android机型city页面白屏问题
 import 'babel-polyfill'
+
+import './register'
+// import 'common/stylus/index.styl'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)

@@ -6,9 +6,20 @@
       :bannerImgs="gallaryImgs"
     ></detail-banner>
     <detail-header></detail-header>
-    <div class="content">
-      <detail-list :list="list"></detail-list>
+    <div class="top-margin"></div>
+    <notice :notice="notice"></notice>
+    <div class="top-margin"></div>
+    <div class="recommend border-bottom">
+      <div class="recommend-title">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#iconpraise2"></use>
+        </svg>
+        去哪儿推荐
+      </div>
     </div>
+    <!-- <div class="content">
+      <detail-list :list="list"></detail-list>
+    </div> -->
   </div>
 </template>
 
@@ -17,6 +28,7 @@ import axios from 'axios'
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
+import Notice from './components/Notice'
 
 export default {
   // 组件name的用途：
@@ -27,13 +39,15 @@ export default {
   components: {
     DetailBanner,
     DetailHeader,
-    DetailList
+    DetailList,
+    Notice
   },
   data () {
     return {
       sightName: '',
       bannerImg: '',
       gallaryImgs: [],
+      notice: '',
       list: []
     }
   },
@@ -53,6 +67,7 @@ export default {
         this.sightName = data.sightName
         this.bannerImg = data.bannerImg
         this.gallaryImgs = data.gallaryImgs
+        this.notice = data.notice
         this.list = data.categoryList
       }
     }
@@ -65,6 +80,14 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-  .content
-    height: 50rem
+  @import '~styles/func.styl'
+  .top-margin
+    height: .2rem
+    background: #eee
+  .recommend
+    height: .6rem
+    .recommend-title
+      margin: .3rem 0 .15rem .1rem
+    .icon
+      font-size: .3rem
 </style>
