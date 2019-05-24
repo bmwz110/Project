@@ -1,6 +1,6 @@
 <template>
   <div @click="showDetail">
-    <div class="notice">
+    <div v-if="noticeShow" class="notice">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#iconlaba3"></use>
       </svg>
@@ -14,6 +14,15 @@ export default {
   name: 'Notice',
   props: {
     notice: String
+  },
+  computed: {
+    noticeShow () {
+      if (this.notice === "") {
+        return false
+      } else {
+        return true
+      }
+    }
   },
   methods: {
     showDetail () {

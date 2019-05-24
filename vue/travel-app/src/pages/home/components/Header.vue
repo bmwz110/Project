@@ -34,7 +34,7 @@ export default {
   // 将常用变量保存在styl文件中,增加可维护性
   // 在某个css中引入其他文件时，相对路径标识前需要加上～
   // vue-cli3.0配置alias在node-modules/@vue/cli-service/lib/config/base.js中
-  @import '~styles/variables.styl'
+  @import '~common/stylus/variable.styl'
   .header
     display: flex
     line-height: $headerHeight

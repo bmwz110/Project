@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-  @import '~styles/variables.styl'
+  @import "~common/stylus/variable"
   .list
     display: flex
     flex-direction: column

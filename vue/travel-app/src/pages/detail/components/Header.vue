@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-  @import '~styles/variables.styl'
+  @import "~common/stylus/variable"
   .header-abs
     position: absolute
     left: .2rem

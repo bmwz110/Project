@@ -63,7 +63,8 @@ export default {
     handleGetDataSucc (res) {
       res = res.data
       if (res.ret && res.data) {
-        const data = res.data
+        const detailId = this.$route.params.id/1 - 1;
+        const data = res.data[detailId]
         this.sightName = data.sightName
         this.bannerImg = data.bannerImg
         this.gallaryImgs = data.gallaryImgs

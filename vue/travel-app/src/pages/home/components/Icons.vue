@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-  @import '~styles/variables.styl'
+  @import '~common/stylus/variable.styl'
   @import '~styles/func.styl'
   .icons >>> .swiper-container
     height: 0

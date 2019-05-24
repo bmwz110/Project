@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-  @import '~styles/variables.styl'
+  @import '~common/stylus/variable.styl'
   .top-margin
     margin-top: .2rem
     height: .2rem

@@ -87,7 +87,7 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-  @import '~styles/variables.styl'
+  @import "~common/stylus/variable"
   .search
     height: .72rem
     padding: 0 .1rem
