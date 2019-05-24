@@ -19,21 +19,7 @@
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <div class="item-comment">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#iconxingxing"></use>
-            </svg>
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#iconxingxing"></use>
-            </svg>
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#iconxingxing"></use>
-            </svg>
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#iconxingxing"></use>
-            </svg>
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#iconxingxing"></use>
-            </svg>
+            <star class="score" :size="24" :score="item.score"></star>
             <div class="comment-numbers">{{item.commentNum}}</div>
           </div>
           <div class="price-content">
@@ -51,10 +37,14 @@
 </template>
 
 <script>
+import Star from 'pages/star/star'
 export default {
   name: 'HomeRecommend',
   props: {
     recommendList: Array
+  },
+  components: {
+    Star
   }
 }
 
@@ -87,7 +77,7 @@ export default {
         font-size: .3rem
       .item-comment
         margin-top: .05rem
-        .icon
+        .score
           float: left
           font-size: .3rem
         .comment-numbers

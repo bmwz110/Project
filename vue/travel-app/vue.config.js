@@ -24,6 +24,7 @@ module.exports = {
       // .set('api', resolve('src/api'))
       .set('styles', resolve('src/assets/styles'))
       .set('common', resolve('src/common'))
+      .set('pages', resolve('src/pages'))
   },
 
   css: {

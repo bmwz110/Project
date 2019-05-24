@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import './cube-ui'
+import Cube from 'cube-ui'
 import App from './App.vue'
 import router from './router'
 import store from './store/index'
@@ -20,6 +20,7 @@ import 'babel-polyfill'
 Vue.config.productionTip = false
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
+Vue.use(Cube)
 
 new Vue({
   router,

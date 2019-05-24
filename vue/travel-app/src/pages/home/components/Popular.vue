@@ -43,7 +43,7 @@ export default {
   .list
     height: 0
     padding-bottom: 50%
-    margin-top: .2rem
+    margin: .3rem 0
     .top-margin
       height: .2rem
       background: #eee
