@@ -19,6 +19,7 @@
             v-for="(flag, index) of item.recommendFlag"
             :key="index"
         >
+          <img v-if="showBrand(flag)" class="brand" src="https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png"/>
           {{flag}}
         </div>
       </div>
@@ -27,7 +28,7 @@
           <span class="money-icon">¥</span>
           <span class="price">{{item.recommendPrice}}</span>
         </div>
-        <div class="order">预定</div>
+        <el-button class="order" :plain="true" @click="open">预定</el-button>
       </div>
     </div>
     <div class="grey-margin"></div>
@@ -39,7 +40,29 @@ export default {
   name: 'Recommend',
   props: {
     recommend: Array
+  },
+  methods: {
+    open () {
+      this.$message({
+        showClose: true,
+        message: '此功能正在开发中...',
+        type: 'warning'
+      })
+    },
+    showBrand (flag) {
+      if (flag === "自营") {
+        return true
+      }
+    }
   }
+  // computed: {
+  //   showBrand (flag) {
+  //     console.log(flag)
+  //     if (this.flag === "自营") {
+  //       return true
+  //     }
+  //   }
+  // }
 }
 
 </script>
@@ -77,6 +100,10 @@ export default {
         padding: .03rem
         margin-right: .06rem
         color: $bgColor
+        .brand
+          height: .2rem
+          position: relative
+          top: -.02rem
     .price-order
       position: relative
       top: -1.5rem
@@ -95,7 +122,7 @@ export default {
         font-size: .3rem
         color: #eee
         width: 1rem
-        margin: 0 auto
+        margin: 0 0 0 .3rem
         background: linear-gradient(130deg,#ffab1e 37%,#ff8c12 100%);
         border-radius: .1rem
         text-align: center
