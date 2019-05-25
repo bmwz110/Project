@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="header-left">
+    <div class="header-left" @click="back">
       <div class="iconfont back-icon">&#xe624;</div>
     </div>
     <div class="header-input">
@@ -25,6 +25,11 @@ export default {
   computed: {
     // mapState能够将 $store.state.city 映射到 this.city
     ...mapState(['city'])
+  },
+  methods: {
+    back () {
+      this.$router.go(-1)
+    }
   }
 }
 

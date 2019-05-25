@@ -47,7 +47,6 @@ export default {
     Star
   }
 }
-
 </script>
 
 <style lang='stylus' scoped>

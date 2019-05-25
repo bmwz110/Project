@@ -1,4 +1,5 @@
 <template>
+  <!-- 使用 ref 相较于使用 class/id ,会减少获取 dom 的消耗 -->
   <div class="list" ref="wrapper">
     <div>
       <div class="area">

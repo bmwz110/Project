@@ -1,5 +1,9 @@
 import Vue from 'vue'
+// cube-ui 主要用它的 star 组件
 import Cube from 'cube-ui'
+// element-ui 主要是弹窗比较好看
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import App from './App.vue'
 import router from './router'
 import store from './store/index'
@@ -16,14 +20,13 @@ import 'styles/iconfont.js'
 import 'swiper/dist/css/swiper.css'
 // 解决部分android机型city页面白屏问题
 import 'babel-polyfill'
-
 import './register'
-// import 'common/stylus/index.styl'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
 Vue.use(Cube)
+Vue.use(ElementUI)
 
 new Vue({
   router,
