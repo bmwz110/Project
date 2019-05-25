@@ -1,6 +1,6 @@
 <template>
   <div v-if="noticeShow">
-    <div class="top-margin"></div>
+    <div class="grey-margin"></div>
     <div @click="showDetail">
       <div class="notice">
         <svg class="icon" aria-hidden="true">
@@ -43,7 +43,7 @@ export default {
 
 <style lang='stylus' scoped>
   @import '~styles/func.styl'
-  .top-margin
+  .grey-margin
     height: .2rem
     background: #eee
   .notice
