@@ -9,15 +9,6 @@
     <detail-notice :notice="notice"></detail-notice>
     <div class="grey-margin"></div>
     <detail-recommend :recommend="recommend"></detail-recommend>
-    <!-- <div class="recommend border-bottom">
-      <div class="recommend-title">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#iconpraise2"></use>
-        </svg>
-        去哪儿推荐
-      </div>
-    </div> -->
-    <div></div>
     <!-- 递归门票组件 -->
     <!-- <div class="content">
       <detail-list :list="list"></detail-list>

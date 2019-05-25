@@ -9,9 +9,11 @@
     </div>
     <div class=scrollDiv>
       <div class="scrollList">
-        <div class="listItem"
+        <router-link
+            class="listItem"
             v-for="item of popularList"
             :key="item.id"
+            :to="'/detail/' + item.id"
         >
           <img :src="item.imgUrl" />
           <p class="title">{{item.title}}</p>
@@ -22,7 +24,7 @@
             <p class="price">{{item.price}}</p>
             <p class="word">起</p>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -69,6 +71,7 @@ export default {
             margin: .1rem .2rem
             text-align: center
             font-size: .25rem
+            color: #000
             ellipsis()
           .price-content
             margin-left: .45rem
