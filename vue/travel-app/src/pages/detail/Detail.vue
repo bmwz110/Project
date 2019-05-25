@@ -6,7 +6,6 @@
       :bannerImgs="gallaryImgs"
     ></detail-banner>
     <detail-header></detail-header>
-    <div class="top-margin"></div>
     <notice :notice="notice"></notice>
     <div class="top-margin"></div>
     <div class="recommend border-bottom">

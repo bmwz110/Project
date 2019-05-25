@@ -1,10 +1,13 @@
 <template>
-  <div @click="showDetail">
-    <div v-if="noticeShow" class="notice">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#iconlaba3"></use>
-      </svg>
-      {{notice}}
+  <div v-if="noticeShow">
+    <div class="top-margin"></div>
+    <div @click="showDetail">
+      <div class="notice">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#iconlaba3"></use>
+        </svg>
+        {{notice}}
+      </div>
     </div>
   </div>
 </template>
@@ -40,6 +43,9 @@ export default {
 
 <style lang='stylus' scoped>
   @import '~styles/func.styl'
+  .top-margin
+    height: .2rem
+    background: #eee
   .notice
     height: .8rem
     line-height: .8rem
