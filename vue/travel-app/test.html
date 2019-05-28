@@ -4,39 +4,29 @@
         <meta charset="UTF-8">
         <title></title>
         <style>
-        .over-x{
-            width:600px;
-            overflow:scroll ;
-        }
-            ul{
-                border: 1px solid #1FC195;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                background-color: #CCCCCC;
-                overflow-x: scroll;
-                overflow-y: hidden;
-                height: 610px;
-                width:19000px
-            }
-            ul li{
-                padding: 0;
-                margin: 0;
-                float: left;
-                width: 300px;
-                height: 600px;
-                background: #8FBC8F;
-                margin: 5px;
-            }
+            #div1 {float: left; width: 100px; height: 100px; background: red; margin: 100px;}
+            #div2 {width: 100px; height: 100px; background: green; margin: 30px;}
         </style>
     </head>
     <body>
-        <div class="over-x">
-            <ul>
-                <li>test1</li>
-                <li>test2</li>
-                <li>test3</li><li>test3</li><li>test3</li><li>test3</li><li>test3</li>
-            </ul>
-        </div>
+        <div id="div1">aa</div>
+        <div id="div2">aa</div>
+        <script>
+            function isFirstVisit() {
+                let _list = []
+                return function (id) {
+                    if (_list.indexOf(id) >= 0) {
+                        console.log("Exist!")
+                    } else {
+                        _list.push(id)
+                        console.log("Added~")
+                    }
+                }
+            }
+            let firstVisit = isFirstVisit()
+            firstVisit("a")   // Added~
+            firstVisit("a")   // Exist!
+            firstVisit(10)   // Added~
+        </script>
     </body>
 </html>
