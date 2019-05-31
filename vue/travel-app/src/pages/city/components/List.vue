@@ -57,10 +57,11 @@ export default {
     handleCityClick (city) {
       // 若不使用mapMutations，应为this.$store.commit('changeCity', city)
       this.changeCity(city)
-      // router实现页面跳转
+      // router实现页面跳转到主页
       this.$router.push('/')
     },
     // 有一个mutation叫作changeCity，然后把mutation映射到组件中名为changeCity的方法里
+    // 将 this.changeCity() 映射为 this.$store.commit('changeCity')
     ...mapMutations(['changeCity'])
   },
   watch: {
