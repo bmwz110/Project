@@ -44,7 +44,7 @@ export default {
   @import '~styles/func.styl'
   .list
     height: 0
-    padding-bottom: 50%
+    padding-bottom: 4rem
     margin: .3rem 0
     .top-margin
       height: .2rem
