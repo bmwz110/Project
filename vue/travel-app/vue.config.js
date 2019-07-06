@@ -1,5 +1,4 @@
 const path = require('path')
-var webpack = require('webpack')
 
 function resolve (dir) {
   return path.join(__dirname, dir)
@@ -15,14 +14,7 @@ module.exports = {
           '^/api': '/mock'
         }
       }
-    },
-    hot: true
-  },
-
-  configureWebpack: {
-    plugins: [
-      new webpack.HotModuleReplacementPlugin()
-    ]
+    }
   },
 
   chainWebpack (config) {
