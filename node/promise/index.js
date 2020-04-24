@@ -9,7 +9,7 @@ function getFileContent(fileName, callback) {
       console.log(err)
       return
     }
-    callback(
+    callback( 
       JSON.parse(data.toString())
     )
   })
