@@ -8,7 +8,7 @@ const con = mysql.createConnection({
   port: '3306',
   database: 'myblog'
 })
-
+ 
 // start connection
 con.connect()
 
