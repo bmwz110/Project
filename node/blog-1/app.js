@@ -13,10 +13,10 @@ const getCookieExpires = () => {
 }
 
 const serverHandle = (req, res) => {
-  // 设置返回格式为 JSON
+  // 设置返回格式为 JSON 
   res.setHeader('Content-type', 'application/json')
 
-  // 获取 path 和 query
+  // 获取 path 和 query 
   const url = req.url
   req.path = url.split('?')[0]
   req.query = querystring.parse(url.split('?')[1])
