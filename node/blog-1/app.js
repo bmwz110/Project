@@ -66,7 +66,7 @@ const serverHandle = (req, res) => {
             JSON.stringify(blogData)
           )
           return
-        }
+        } 
       })
       return
     }
