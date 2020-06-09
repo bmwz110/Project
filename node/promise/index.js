@@ -54,3 +54,4 @@ getFileContent('a.json').then(aData => {
   console.log('cData: ', cData)
   return getFileContent(cData.next)
 })
+ 
