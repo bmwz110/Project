@@ -15,4 +15,3 @@ nums.pipe(
 // 4
 // 9
 // finalize will run after subscribe finish
- 
