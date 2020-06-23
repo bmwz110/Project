@@ -8,8 +8,8 @@ nums.pipe(
   finalize(() => console.log('finalize will run after subscribe finish'))
 ).subscribe(
   x => console.log(x)
-)
-
+) 
+ 
 
 // 1
 // 4
