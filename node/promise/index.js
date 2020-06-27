@@ -30,7 +30,7 @@ getFileContent('a.json', aData => {
 function getFileContent(fileName) {
   const promise = new Promise((resolve, reject) => {
     const fullFileName = path.resolve(__dirname, 'files', fileName)
-
+ 
     fs.readFile(fullFileName, (err, data) => {
       if (err) {
         reject(err)
