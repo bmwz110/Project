@@ -24,3 +24,4 @@ con.query(sql, (err, result) => {
 
 // end connection
 con.end()
+ 
