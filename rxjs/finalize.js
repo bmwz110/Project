@@ -9,7 +9,6 @@ nums.pipe(
 ).subscribe(
   x => console.log(x)
 ) 
- 
 
 // 1
 // 4
