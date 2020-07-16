@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  SIZE = 10 * 1024 * 1024;
+  SIZE = 30 * 1024 * 1024;
   data: Array<any>;
   container: {
     file: File,
@@ -23,9 +23,11 @@ export class AppComponent {
     method = "post",
     data,
     headers = {},
+    onProgress = e => e
   }) {
     return new Promise(resolve => {
       const xhr = new XMLHttpRequest();
+      xhr.upload.onprogress = onProgress;
       xhr.open(method, url);
       Object.keys(headers).forEach(key =>
         xhr.setRequestHeader(key, headers[key])
@@ -56,7 +58,9 @@ export class AppComponent {
     const fileChunkList = this.createFileChunk(this.container.file);
     this.data = fileChunkList.map(({ file }, index) => ({
       chunk: file,
-      hash: this.container.file.name + "-" + index   // 文件名 + 数组下标
+      index,
+      hash: this.container.file.name + "-" + index,   // 文件名 + 数组下标
+      percentage: 0
     }));
     this.uploadChunks();
   }
@@ -73,17 +77,18 @@ export class AppComponent {
 
   private uploadChunks() {
     const requestList = this.data
-    .map(({ chunk, hash }) => {
+    .map(({ chunk, hash, index }) => {
       const formData = new FormData();
       formData.append("chunk", chunk);
       formData.append("hash", hash);
       formData.append("filename", this.container.file.name);
-      return { formData };
+      return { formData, index };
     })
-    .map(({formData}) =>
+    .map(({formData, index}) =>
       this.request({
         url: "http://localhost:3000",
-        data: formData
+        data: formData,
+        onProgress: this.createProgressHandle(this.data[index])
       })
     )
     Promise.all(requestList); // 并发切片
@@ -92,9 +97,15 @@ export class AppComponent {
     this.mergeRequest();
   }
 
+  private createProgressHandle(item) {
+    return e => {
+      item.percentage = parseInt(String((e.loaded / e.total) * 100))
+    }
+  }
+
   private mergeRequest() {
     this.request({
-      url: "http://localhost:3000",
+      url: "http://localhost:3000/merge",
       headers: {
         "contnet-type": "application/json"
       },
