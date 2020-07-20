@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <video controls=""></video>
+    <script>
+      var video = document.querySelector('video');
+
+      var assetURL = 'frag_bunny.mp4';
+      // avc1 表示视频采用 H.264 编码
+      // . 分隔点
+      // AVCProfileIndication (H.264 的 profile): 42
+      // profile_compability (解码器要求): E0
+      // AVCLevelIndication (解码器要求): 1E
+      // mp4a.40.2: 音频编码规范
+      var mimeCodec = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
+
+      if ('MediaSource' in window && 
+      MediaSource.isTypeSupported(mimeCodec)) {
+        var mediaSource = new MediaSource;
+        // URL.createObjectURL 只是底层M ediaSource 流和 video.src 的连接中介，一旦两者连接成功，则该中介就无用了
+        // 出于节约内存的目的，可以利用 sourceopen Event 判定连接成功，而后使用 URL.revokeObjectURL(...)销毁中介
+        video.src = URL.createObjectURL(mediaSource);
+        mediaSource.addEventListener('sourceopen', sourceOpen);
+      } else {
+        console.error('Unsupported MIME type or codec: ', mimeCodec);
+      }
+
+      function sourceOpen (e) {
+        // 连接已建立，销毁中介
+        URL.revokeObjectURL(video.src);
+
+        var mediaSource = e.target;
+        // SourceBuffer 是由 mediaSource 创建，并直接和 HTMLMediaElement 接触
+        var sourceBuffer = mediaSource.addSourceBuffer(mimeCodec);
+        fetchAB(assetURL, function (buf) {
+          sourceBuffer.addEventListener('updateend', function (_) {
+            mediaSource.endOfStream();
+            video.play();
+          });
+          console.log("buf",buf);
+          sourceBuffer.appendBuffer(buf);
+        });
+      };
+
+      function fetchAB (url, cb) {
+        console.log(url);
+        var xhr = new XMLHttpRequest;
+        xhr.open('get', url);
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function () {
+          cb(xhr.response);
+        };
+        xhr.send();
+      };
+    </script>
+  </body>
+</html>
