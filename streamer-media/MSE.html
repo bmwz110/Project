@@ -9,7 +9,7 @@
 
       var assetURL = 'frag_bunny.mp4';
       // avc1 表示视频采用 H.264 编码
-      // . 分隔点
+      // . 分隔点 
       // AVCProfileIndication (H.264 的 profile): 42
       // profile_compability (解码器要求): E0
       // AVCLevelIndication (解码器要求): 1E
@@ -19,14 +19,14 @@
       if ('MediaSource' in window && 
       MediaSource.isTypeSupported(mimeCodec)) {
         var mediaSource = new MediaSource;
-        // URL.createObjectURL 只是底层M ediaSource 流和 video.src 的连接中介，一旦两者连接成功，则该中介就无用了
+        // URL.createObjectURL 只是底层M ediaSource 流和 video.src 的连接中介， 一旦两者连接成功，则该中介就无用了
         // 出于节约内存的目的，可以利用 sourceopen Event 判定连接成功，而后使用 URL.revokeObjectURL(...)销毁中介
         video.src = URL.createObjectURL(mediaSource);
         mediaSource.addEventListener('sourceopen', sourceOpen);
       } else {
         console.error('Unsupported MIME type or codec: ', mimeCodec);
       }
-
+ 
       function sourceOpen (e) {
         // 连接已建立，销毁中介
         URL.revokeObjectURL(video.src);
