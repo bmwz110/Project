@@ -5,7 +5,7 @@ const nums = of(1, 2, 3);
 
 nums.pipe(
   map(x => x * x),
-  finalize(() => console.log('finalize will run after subscribe finish'))
+  finalize(() => console.log('finalize will run after subscribe finish')) 
 ).subscribe(
   x => console.log(x)
 ) 
