@@ -10,8 +10,8 @@ func main()
 	contents, err := ioutil.ReadFile(filename)
 	if err != nil {
 		fmt.Println(err)
-	} else {
+	} else { 
 		fmt.Printf("%s\n", contents)
-	}
+	} 
 }
   
