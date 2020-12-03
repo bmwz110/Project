@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+  </style>
+</head>
+<body>
+  <input id="first">
+  <input id="second">
+</body>
+<script src="./test.js"></script>
+<script>
+  ////////////////////////////////////////////////////////////////
+  // Web Worker Config
+  ////////////////////////////////////////////////////////////////
+  myWorker = new Worker(URL.createObjectURL(
+    new Blob(["("+worker_function.toString()+")()"], {type: 'text/javascript'})
+    )
+  );
+
+  myWorker.onmessage = function(e) {
+    console.log('Message received from worker');
+    console.log(e.data)
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // Main
+  ////////////////////////////////////////////////////////////////
+  let first = document.getElementById('first');
+  let second = document.getElementById('second');
+
+  first.onchange = function() {
+    myWorker.postMessage([first.value,second.value]);
+    console.log('Message posted to worker');
+  }
+
+  second.onchange = function() {
+    myWorker.postMessage([first.value,second.value]);
+    console.log('Message posted to worker');
+  }
+</script>
+</html>
