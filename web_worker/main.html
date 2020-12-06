@@ -18,7 +18,7 @@
   // Web Worker Config
   ////////////////////////////////////////////////////////////////
   myWorker = new Worker(URL.createObjectURL(
-    new Blob(["("+worker_function.toString()+")()"], {type: 'text/javascript'})
+    new Blob(["("+worker_function.toString()+")()"], {type: 'text/javascript'}) 
     )
   );
 
