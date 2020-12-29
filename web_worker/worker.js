@@ -10,3 +10,4 @@ function worker_function() {
 if(window != self) {
   worker_function();
 }
+
