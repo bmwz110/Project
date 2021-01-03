@@ -28,23 +28,23 @@ stages:
 
 test-111:
   script:
-    - echo 'bbbbbbbb'
+    - echo 'test-111'
 
 aest:
   stage: test
   script:
-    - echo 'test!!!'
+    - echo 'aest'
 
 build_tag1:
   script:
-    - echo 'bbbbbbbb'
+    - echo 'build_tag1'
 
 build_aaaa:
   stage: build
   script:
-    - echo 'build!!!'
+    - echo 'build_aaaa'
 
 build_tag2:
   script:
-    - echo 'cccccc'
+    - echo 'build_tag2'
 
