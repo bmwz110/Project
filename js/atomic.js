@@ -1,6 +1,7 @@
 const workerScript = `
   self.onmessage = ({data}) => {
     const view = new Uint32Array(data);
+
     // 执行1000000次加操作
     for (let i = 0; i < 1E6; ++i) {
     // 线程不安全加操作会导致资源争用
