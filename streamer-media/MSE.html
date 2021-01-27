@@ -21,7 +21,7 @@
         var mediaSource = new MediaSource;
         // URL.createObjectURL 只是底层M ediaSource 流和 video.src 的连接中介， 一旦两者连接成功，则该中介就无用了
         // 出于节约内存的目的，可以利用 sourceopen Event 判定连接成功，而后使用 URL.revokeObjectURL(...)销毁中介
-        video.src = URL.createObjectURL(mediaSource);
+        video.src = URL.createObjectURL(mediaSource); 
         mediaSource.addEventListener('sourceopen', sourceOpen);
       } else {
         console.error('Unsupported MIME type or codec: ', mimeCodec);
