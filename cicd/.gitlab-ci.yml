@@ -2,7 +2,7 @@ before_script:
   - CI_COMMIT_TAG=${CI_COMMIT_TAG}
 
   - if [[ $TESTTAG == ejan_* ]]; then
-  -   echo '1111111111'
+  -   echo 'test-1'
   -   ENV='ejan';
   - else
   -   echo '22222222222' 
